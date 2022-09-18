@@ -5,6 +5,7 @@ pub mod crypto {
     use magic_crypt::{ MagicCryptError, MagicCryptTrait };
     use crate::security::{ PRODUCT_KEY, DEV_KEY };
 
+    #[allow(dead_code)]
     pub fn encrypt(data: &str, dev: bool) -> String {
         return if dev {
             let mcrypt = new_magic_crypt!(&DEV_KEY, 256);
